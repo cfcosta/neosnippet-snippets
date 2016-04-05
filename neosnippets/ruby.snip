@@ -166,7 +166,7 @@ options     head
   end
 
 snippet     class
-  class ${1:#:Name}
+  class ${1:`substitute(bufname('%') ==#'[Command Line]' ? expand('#:t:r:r:r') : expand('%:t:r:r:r'), '\%(^\(.\)\|_\(.\)\)', '\u\1\u\2', 'g')`}
     ${0}
   end
 
